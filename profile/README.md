@@ -21,29 +21,6 @@ It is portable to any POSIX-compliant system (e.g. Linux, macOS, BSD, etc.). The
 - CMake (version 3.22 or above)
 - A POSIX-compliant system (e.g. Linux, macOS, BSD, etc.)
 
-## Building
-
-- Clone this repository
-- `cmake -S. -Bbuild`
-- `make -Cbuild`
-- The executables `jaltext_server` and `jaltext_client` in the directory `build/` will appear.
-
-### Extra
-- If you can’t build the project, please make sure the dependencies are correctly applied;
-- You can use the `-j` flag for Make to enable multithreaded compiling (for example, my laptop has 4 cores, so I usually run `make -Cbuild -j4`).
-
-## Project Structure
-
-- `src/`: Source code of the project implementation
-    - `jalsock/`: The wrapped standalone POSIX C library functions (e.g. `send()`, `recv()`, etc.)
-    - `types/`: The wrapper classes for the POSIX C library (e.g. `addr_info`, `sockaddr`, etc.)
-    - `server/`: The server implementation
-    - `client/`: The client implementation
-
-## Notes
-
-- I could have done better with `epoll`, but I decided to use `select` because it is easier to use. I will probably switch to `epoll` in the future.
-
 ## License
 
 This project is licensed under the **GNU Affero General Public License v3.0**.
